@@ -1,0 +1,30 @@
+<header class="bg-gray-800 text-white">
+    <nav class="container mx-auto flex justify-between items-center p-4">
+        <a href="#" class="text-2xl font-bold">NanoTech</a>
+        
+        <button id="menu-btn" class="md:hidden block text-white focus:outline-none">
+            &#9776;
+        </button>
+        
+        <ul id="menu" class="hidden md:flex space-x-6">
+            <li><a href="#sobre-nosotros" class="hover:text-green-400">Sobre Nosotros</a></li>
+            <li><a href="#servicios" class="hover:text-green-400">Servicios</a></li>
+            <li><a href="#contacto" class="hover:text-green-400">Contacto</a></li>
+        </ul>
+    </nav>
+    
+    <ul id="mobile-menu" class="hidden md:hidden flex flex-col items-center bg-gray-900 text-white p-4">
+        <li><a href="#sobre-nosotros" class="block py-2 hover:text-green-400">Sobre Nosotros</a></li>
+        <li><a href="#servicios" class="block py-2 hover:text-green-400">Servicios</a></li>
+        <li><a href="#contacto" class="block py-2 hover:text-green-400">Contacto</a></li>
+    </ul>
+</header>
+
+<!-- <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    
+    menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+</script> -->
