@@ -1,16 +1,19 @@
 ---
-
-import Hero from '../components/Hero.astro';
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+import Work from "../components/Work.astro";
+import Container from "../components/Container.astro";
 ---
 
 <Layout>
-	<Header/>
-	<main>
-		<Hero/>
-	</main>
-	<Footer/>
+  <main>
+    <section>
+      <Hero />
+    </section>
+    <div  class="space-y-24">
+      <Container>
+        <Work />
+      </Container>
+    </div>
+  </main>
 </Layout>
