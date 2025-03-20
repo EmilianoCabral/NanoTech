@@ -1,5 +1,14 @@
-<section
-  class=`scroll-m-20 w-full px-4 mx-auto container lg:max-w-screen-lg md:max-w-2xl`
->
-  <slot />
+--- 
+export interface Props {
+  bgColor?: string;
+}
+
+const { bgColor } = Astro.props;
+---
+
+<section class={`${bgColor}`}>
+  <div class="scroll-m-20 w-full px-4 mx-auto container lg:max-w-screen-lg md:max-w-2xl">
+    <slot />
+  </div>
 </section>
+
