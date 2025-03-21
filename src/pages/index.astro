@@ -5,6 +5,7 @@ import Work from "../components/Work.astro";
 import Container from "../components/Container.astro";
 import Whatsapp from "../components/Whatsapp.icon.astro";
 import Service from "../components/Service.astro"
+import Marcas from "../components/Marcas.astro";
 ---
 
 <Layout>
@@ -13,13 +14,14 @@ import Service from "../components/Service.astro"
       <Hero />
     </section>
     <div  class="space-y-24">
-      <Container>
-        <Work />
-      </Container>
-      <Whatsapp/>
       <Container bgColor="bg-[#041122]">
         <Service/>
       </Container>
+      <Marcas/>
+      <Container>
+        <Work />
+      </Container>
     </div>
+    <Whatsapp/>
   </main>
 </Layout>
