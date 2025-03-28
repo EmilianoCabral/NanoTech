@@ -1,0 +1,51 @@
+---
+const items = [
+  { id: "accordion-1", title: "What is Flowbite?", content: "Flowbite is an open-source library..." },
+  { id: "accordion-2", title: "Is there a Figma file available?", content: "Yes, Flowbite is designed with Figma..." },
+  { id: "accordion-3", title: "What are the differences between Flowbite and Tailwind UI?", content: "Flowbite is open source, whereas Tailwind UI is a paid product..." }
+];
+---
+
+<div id="accordion">
+  {items.map((item) => (
+    <div>
+      <h2>
+        <button 
+          type="button"
+          class="flex items-center justify-between w-full p-5 font-medium text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+          data-accordion-button
+          data-accordion-target={item.id}
+        >
+          <span>{item.title}</span>
+          <svg class="w-3 h-3 transition-transform" viewBox="0 0 10 6">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+          </svg>
+        </button>
+      </h2>
+      <div id={item.id} class="hidden p-5 border border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+        <p class="text-gray-500 dark:text-gray-400">{item.content}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
+<script is:inline>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("[data-accordion-button]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const targetId = button.getAttribute("data-accordion-target");
+      if (!targetId) return;
+
+      const content = document.getElementById(targetId);
+      const svgIcon = button.querySelector("svg");
+
+      if (!content) return;
+
+      content.classList.toggle("hidden");
+      svgIcon.classList.toggle("rotate-180");
+    });
+  });
+});
+</script>
+
+
